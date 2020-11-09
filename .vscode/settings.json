@@ -1,4 +1,13 @@
 {
-    "eslint.enable": false,
-    "editor.formatOnSave": true
+ 
+  // Set the default
+  "editor.formatOnSave": false,
+  // Enable per-language
+  "[javascript]": {
+      "editor.formatOnSave": true
+  },
+  "editor.codeActionsOnSave": {
+      // For ESLint
+      "source.fixAll.eslint": true
+  }
 }

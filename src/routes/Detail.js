@@ -1,3 +1,1 @@
-import React from "react";
-
-   export default () => "Detail";
+export default () => 'Detail';
