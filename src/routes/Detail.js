@@ -58,9 +58,13 @@ export default () => {
   return (
     <Container>
       <Column>
-        <Title>Name</Title>
-        <Subtitle>English · 4.5</Subtitle>
-        <Description>lorem ipsum lalalla </Description>
+        <Title>{loading ? 'loading...' : data.movie.title}</Title>
+        {!loading && data.movie && (
+          <>
+            <Subtitle>English · 4.5</Subtitle>
+            <Description>lorem ipsum lalalla </Description>
+          </>
+        )}
       </Column>
       <Poster />
     </Container>
