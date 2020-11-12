@@ -61,8 +61,8 @@ export default () => {
         <Title>{loading ? 'loading...' : data.movie.title}</Title>
         {!loading && data.movie && (
           <>
-            <Subtitle>English · 4.5</Subtitle>
-            <Description>lorem ipsum lalalla </Description>
+            <Subtitle>{data.movie.rating}</Subtitle>
+            <Description>{data.movie.description_intro}</Description>
           </>
         )}
       </Column>
