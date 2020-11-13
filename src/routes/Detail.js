@@ -27,6 +27,7 @@ const Container = styled.div`
 
 const Column = styled.div`
   margin-left: 10px;
+  width: 50%;
 `;
 
 const Title = styled.h1`
@@ -61,7 +62,9 @@ export default () => {
         <Title>{loading ? 'loading...' : data.movie.title}</Title>
         {!loading && data.movie && (
           <>
-            <Subtitle>{data.movie.rating}</Subtitle>
+            <Subtitle>
+              {data.movie.language} · {data.movie.rating}
+            </Subtitle>
             <Description>{data.movie.description_intro}</Description>
           </>
         )}
