@@ -45,9 +45,12 @@ const Description = styled.p`
 `;
 
 const Poster = styled.div`
+  background-image: url(${(props) => props.bg});
   width: 25%;
   height: 60%;
   background-color: transparent;
+  background-size: cover;
+  background-position: center center;
 `;
 // eslint-disable-next-line consistent-return
 export default () => {
@@ -69,7 +72,7 @@ export default () => {
           </>
         )}
       </Column>
-      <Poster />
+      <Poster bg={data && data.movie ? data.movie.medium_cover_image : ''} />
     </Container>
   );
 };
