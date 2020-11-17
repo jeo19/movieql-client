@@ -9,6 +9,7 @@ const GET_MOVIES = gql`
     movies(limit: 20, rating: 8) {
       id
       medium_cover_image
+      isLiked @client
     }
   }
 `;
@@ -63,13 +64,13 @@ export default () => {
         <Title>Apollo 2020</Title>
         <Subtitle>I love GraphQL</Subtitle>
       </Header>
-      {!loading && data.movies && (
-        <Movies>
-          {data.movies.map((m) => (
-            <Movie key={m.id} id={m.id} bg={m.medium_cover_image} />
-          ))}
-        </Movies>
-      )}
+      {loading && <Loading>loading...</Loading>}
+
+      <Movies>
+        {data?.movies?.map((m) => (
+          <Movie key={m.id} id={m.id} bg={m.medium_cover_image} />
+        ))}
+      </Movies>
     </Container>
   );
 };

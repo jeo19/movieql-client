@@ -63,8 +63,6 @@ export default () => {
     // eslint-disable-next-line radix
     variables: { id: parseInt(id) },
   });
-  // eslint-disable-next-line no-console
-  console.log(data);
   return (
     <Container>
       <Column>
