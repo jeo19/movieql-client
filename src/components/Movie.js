@@ -27,7 +27,7 @@ const Poster = styled.div`
 export default ({ id, bg, isLiked }) => {
   const [toggleMovie] = useMutation(LIKE_MOVIE, {
     // eslint-disable-next-line radix
-    variables: { id: parseInt(id) },
+    variables: { id: parseInt(id), isLiked },
   });
   return (
     <Container>
