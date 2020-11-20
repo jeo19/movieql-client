@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { gql, useMutation } from '@apollo/client';
+import { gql, useMutation } from '@apollo/react-hooks';
 
 const LIKE_MOVIE = gql`
   mutation toggleLikeMovie($id: Int!, $isLiked: Boolean!) {

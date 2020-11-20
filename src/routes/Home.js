@@ -8,6 +8,7 @@ const GET_MOVIES = gql`
   {
     movies(limit: 5, rating: 8) {
       id
+      title
       medium_cover_image
       isLiked @client
     }

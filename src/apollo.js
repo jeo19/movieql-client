@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache, gql } from '@apollo/client';
+import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({
   uri: 'http://localhost:4000',
@@ -13,7 +13,6 @@ const client = new ApolloClient({
         const myMovie = {
           __typename: 'Movie',
           id: `${id}`,
-          isLiked: `${isLiked}`,
         };
         cache.modify({
           id: cache.identify(myMovie),

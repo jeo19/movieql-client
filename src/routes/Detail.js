@@ -7,15 +7,13 @@ import styled from 'styled-components';
 const GET_MOVIE = gql`
   query getMovie($id: Int!) {
     movie(id: $id) {
+      id
       title
       medium_cover_image
       language
       rating
       description_intro
-    }
-    suggestions(id: $id) {
-      id
-      medium_cover_image
+      isLiked @client
     }
   }
 `;
@@ -56,7 +54,6 @@ const Poster = styled.div`
   background-size: cover;
   background-position: center center;
 `;
-// eslint-disable-next-line consistent-return
 export default () => {
   const { id } = useParams();
   const { loading, data } = useQuery(GET_MOVIE, {
@@ -66,7 +63,11 @@ export default () => {
   return (
     <Container>
       <Column>
-        <Title>{loading ? 'loading...' : data.movie.title}</Title>
+        <Title>
+          {loading
+            ? 'Loading...'
+            : `${data.movie.title} ${data.movie.isLiked ? '💖' : '😞'}`}
+        </Title>
         <Subtitle>
           {data?.movie?.language} · {data?.movie?.rating}
         </Subtitle>
